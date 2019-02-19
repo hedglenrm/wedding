@@ -1,8 +1,6 @@
-
 $(document).ready(function () {
 
     /***************** Waypoints ******************/
-
     $('.wp1').waypoint(function () {
         $('.wp1').addClass('animated fadeInLeft');
     }, {
@@ -163,23 +161,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Megan and Ryan's Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('May 11, 2019 17:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('May 11, 2019 00:00'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: '700 Elliotsville Rd, Farmington, PA 15437',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues contact Mr. Amit Roy at +91 9435021804 or +91 7086018971."
+            description: "We can't wait to see you on our big day. For any queries or issues contact Ryan @ 412-508-4728"
         }
     });
 
@@ -188,16 +186,37 @@ $(document).ready(function () {
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
+	   e.preventDefault();
         var data = $('form#rsvp-form').serialize();
+	   var url = 'https://script.google.com/macros/s/AKfycbxuR3bQLmJuoX0LeuWK6ArFMrHcac8gOMGaU_RsadjzVBolsNSL/exec';
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-	   fs.appendFile('listofdata.txt', data);
+	//    $.get(url, data)
+	// 	.done(function (data) {
+	// 		console.log(data);
+	// 		$('#alert-wrapper').html('');
+	// 		$('#rsvp-modal').modal('show');
+	// 	})
+	// 	.fail(function (data) {
+	// 		console.log(data);
+	// 		$('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+	// 	});
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', url);
+		// xhr.withCredentials = true;
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.onreadystatechange = function() {
+		console.log(xhr.status, xhr.statusText);
+		console.log(xhr.responseText);
+		return;
+		};
+		// url encode form data for sending as post data
+		var encoded = Object.keys(data).map(function(k) {
+		return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+		}).join('&');
+		xhr.send(encoded);
 
-		console.log(data);
-		$('#alert-wrapper').html('');
-		$('#rsvp-modal').modal('show');
     });
 
 });
@@ -220,7 +239,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat: 39.7744912, lng: -79.5957492};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
