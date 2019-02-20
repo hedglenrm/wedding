@@ -27,6 +27,9 @@
     .hero .hero-content {
         padding-top: 50%;
     }
+    .hero .hero-content img {
+	width: 75%;
+ }
 
     .header-nav {
         position: fixed;
@@ -256,6 +259,9 @@
     .hero .hero-content {
         padding-top: 100%;
     }
+    .hero .hero-content img {
+	width: 75%;
+ }
 
     #eng-pics .img-wrap i {
         font-size: 25px;
