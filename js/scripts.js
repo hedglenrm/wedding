@@ -171,7 +171,7 @@ $(document).ready(function () {
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('May 11, 2019 00:00'),
+            end: new Date('May 12, 2019 00:00'),
 
             // Event Address
             address: '700 Elliotsville Rd, Farmington, PA 15437',
@@ -183,7 +183,6 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
 
-
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
 	   e.preventDefault();
@@ -192,30 +191,19 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-	//    $.get(url, data)
-	// 	.done(function (data) {
-	// 		console.log(data);
-	// 		$('#alert-wrapper').html('');
-	// 		$('#rsvp-modal').modal('show');
-	// 	})
-	// 	.fail(function (data) {
-	// 		console.log(data);
-	// 		$('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-	// 	});
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', url);
 		// xhr.withCredentials = true;
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.onreadystatechange = function() {
-		console.log(xhr.status, xhr.statusText);
-		console.log(xhr.responseText);
-		return;
+			$('#alert-wrapper').html('');
+			$('#rsvp-modal').modal('show');
+			return;
 		};
 		// url encode form data for sending as post data
-		var encoded = Object.keys(data).map(function(k) {
-		return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-		}).join('&');
-		xhr.send(encoded);
+		var encoded = encodeURIComponent(data);
+		console.log(encoded);
+		xhr.send(data);
 
     });
 
