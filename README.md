@@ -22,9 +22,5 @@ Will add detailed instructions soon about Uber API and other configurations on t
 this [article](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server) to setup your Google sheet
 for rsvp feature.
 
-# About Me
-Hello, my name is Ram. I am a Software Engineer at [Oath](https://www.oath.com/). I enjoy making teeny tiny applications in
-my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing it. Hope you like it!
-
 # Contribute
 More than happy for PRs or [gifts](https://www.paypal.me/ramswaroop) :)
