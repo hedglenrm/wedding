@@ -25,12 +25,6 @@ Global Styles
 }
 a {
   color: $accent-color;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transition-property: color, border-color, background-color;
-  transition-property: color, border-color, background-color;
 }
 a:hover, a:focus {
   color: $accent-color-hover;
@@ -141,23 +135,23 @@ Animations
     transform: translate(-50%, 0)
   }
 }
-.floating-logo {
-  animation-name: floating-logo;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-@keyframes floating-logo {
-  from {
-    transform: translate(-50%, 0)
-  }
-  50% {
-    transform: translate(-50%, 10px)
-  }
-  to {
-    transform: translate(-50%, 0)
-  }
-}
+// .floating-logo {
+//   animation-name: floating-logo;
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   animation-timing-function: ease-in-out;
+// }
+// @keyframes floating-logo {
+//   from {
+//     transform: translate(-50%, 0)
+//   }
+//   50% {
+//     transform: translate(-50%, 10px)
+//   }
+//   to {
+//     transform: translate(-50%, 0)
+//   }
+// }
 
 /* ==========================================================================
 Waypoinsts
@@ -212,10 +206,7 @@ Navigation
   bottom: -10px
 }
 .nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out
+
 }
 .nav-toggle.active span {
   background-color: transparent
@@ -244,7 +235,6 @@ Navigation
   right: 10px;
   top: 48px;
   visibility: hidden;
-  transition: all 300ms ease-in-out;
 }
 
 /* ==========================================================================
@@ -252,7 +242,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../img/slideshow/april.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -282,27 +272,25 @@ Hero
   }
 }
 .navigation {
-  transition: all 300ms ease-in-out;
+  background-color: $txt-light;
   position: fixed;
   width: 100%;
   z-index: 999;
 }
 .fixed {
   position: fixed;
-  background-color: rgba(36, 55, 40, 0.88);
+  padding: 0px;
   z-index: 999;
-  width: 100%;
 }
 header {
-  padding: 50px 0;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
   position: relative;
   width: 1170px;
   margin: 0 auto;
-  transition: padding 300ms ease-in-out;
+
 
   a {
-    color: $txt-light;
+    color: $txt-primary;
     text-transform: uppercase;
     font-size: $nav-font-size;
 
@@ -314,7 +302,8 @@ header {
     display: inline-block;
   }
   .logo img {
-    height: 19px;
+    height: 150px;
+    width: 150px
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
@@ -324,7 +313,7 @@ header {
       display: inline;
 
       a {
-        color: $txt-light;
+        color: $txt-primary;
         padding-right: 25px;
 
         &:hover {
@@ -356,7 +345,7 @@ header {
     position: absolute;
     right: 0;
     top: 41px;
-    transition: all 300ms ease-in-out;
+
   }
 }
 .down-arrow {
@@ -573,10 +562,6 @@ Features-stack
   img {
     width: 100%;
     height: auto;
-    -moz-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
   }
   h2 {
     font-size: $blog-post-title;
@@ -597,10 +582,6 @@ Features-stack
       width: 100%;
       height: 100%;
       background-color: rgba($white-color, 0.5);
-      -moz-transition: all 300ms ease-in-out;
-      -o-transition: all 300ms ease-in-out;
-      -webkit-transition: all 300ms ease-in-out;
-      transition: all 300ms ease-in-out;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0);
       opacity: 0;
@@ -646,75 +627,6 @@ Instagram
 #instagram {
   img {
     width: 100%;
-  }
-}
-
-/* ==========================================================================
-Engagement Pics
-========================================================================== */
-#eng-pics {
-  img {
-    width: 100%;
-    height: auto;
-    -moz-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-  }
-  .img-wrap {
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-  }
-  .img-wrap .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    -moz-transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0; }
-  .img-wrap i {
-    color: #fff;
-    font-size: 15px;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    top: 6px;
-    right: 6px; }
-  .img-wrap:hover img, .img-wrap:focus img {
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
-  .img-wrap:hover .overlay, .img-wrap:focus .overlay {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-    filter: alpha(opacity=1);
-    opacity: 1;
-    z-index: 9; }
-  .diamond {
-    width: 230px;
-    height: 230px;
-    position: absolute;
-    bottom: -145px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 500;
-  }
-  .ring {
-    width: 75px;
-    height: 75px;
-    border-radius: 75px;
-    border: 10px solid #d0d3d4;
-    position: absolute;
-    left: 34%;
-    top: 75%;
-    z-index: -1;
   }
 }
 
@@ -874,11 +786,6 @@ footer {
   }
   .to-top-wrapper .to-top {
     display: block;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
   }
   .to-top-wrapper .to-top:hover {
     margin-top: -5px;
