@@ -1,7 +1,11 @@
 @media screen and (max-width: 1200px) {
+    .member-actions {
+        float: right;
+    }
     header {
         width: 90%;
         margin: 0 auto;
+        padding-top: 50px;
     }
 
     .intro-content {
@@ -15,17 +19,34 @@
     .hero .hero-content {
         padding-top: 50%;
     }
+    .member-actions {
+        float: right;
+    }
 }
 
 /* Responsive nav kicks in */
 @media screen and (max-width: 991px) {
+    
+    
+    
+    .member-actions {
+        float: none;
+    }
+
+    .header-row{
+        padding: 0px;
+    }
+
+    .top {
+        overflow:hidden;
+    }
     header {
         width: 90%;
         padding-left: 25px;
     }
 
     .hero .hero-content {
-        padding-top: 50%;
+        padding-top: 5%;
     }
     .hero .hero-content img {
 	width: 75%;
@@ -43,18 +64,11 @@
         opacity: 0;
         -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
         transition: opacity 0.5s, visibility 0s 0.5s;
-    }
-
-    ul.member-actions {
-        position: static;
+        padding: 0px;
     }
 
     .navicon {
         visibility: visible;
-    }
-
-    header .nav-wrapper {
-        display: absolute;
     }
 
     header nav {
@@ -86,9 +100,6 @@
         display: block;
     }
 
-    nav ul.member-actions li {
-        display: block;
-    }
 
     nav a.login {
         margin-right: 0px;
@@ -104,34 +115,10 @@
         padding-right: 0;
     }
 
-    nav .member-actions {
-        position: static;
-        padding: 0;
-        text-align: center;
-    }
-
     nav ul.primary-nav li,
-    nav ul.member-actions li {
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        filter: alpha(opacity=0);
-        opacity: 0;
-        -moz-transform: translate3d(0, -80px, 0);
-        -ms-transform: translate3d(0, -80px, 0);
-        -o-transform: translate3d(0, -80px, 0);
-        -webkit-transform: translate3d(0, -80px, 0);
-        transform: translate3d(0, -80px, 0);
-        -moz-transition: -moz-transform 0.5s, opacity 0.5s;
-        -o-transition: -o-transform 0.5s, opacity 0.5s;
-        -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-        transition: transform 0.5s, opacity 0.5s;
-        -moz-transition: -moz-transform 0.5s, opacity 0.5s;
-        -o-transition: -o-transform 0.5s, opacity 0.5s;
-        -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-        transition: transform 0.5s, opacity 0.5s
-    }
+ 
 
-    header .header-nav.open ul.primary-nav li,
-    header .header-nav.open ul.member-actions li {
+    header .header-nav.open ul.primary-nav li{
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         filter: alpha(opacity=100);
         opacity: 1;
@@ -170,20 +157,6 @@
         transition-delay: 0.2s
     }
 
-    nav ul.member-actions li:first-child {
-        -moz-transition-delay: 0.25s;
-        -o-transition-delay: 0.25s;
-        -webkit-transition-delay: 0.25s;
-        transition-delay: 0.25s
-    }
-
-    nav ul.member-actions li:nth-child(2) {
-        -moz-transition-delay: 0.30s;
-        -o-transition-delay: 0.30s;
-        -webkit-transition-delay: 0.30s;
-        transition-delay: 0.30s
-    }
-
     .intro-content {
         display: inline-block;
         width: 75%;
@@ -194,44 +167,12 @@
         margin: 0;
     }
 
-    .features {
-        padding-bottom: 0;
-    }
 
-    .features .device-showcase,
-    .features-extra .macbook-wrap {
-        display: none;
-    }
-
-    .features .responsive-feature-img,
-    .features-extra .responsive-feature-img {
-        display: block;
-        width: 85%;
-        margin: 15% auto 0;
-    }
-
-    .features .responsive-feature-img img,
-    .features-extra .responsive-feature-img img {
-        width: 100%;
-    }
 
     .hero-strip {
         margin-top: 0;
     }
 
-    .events .leftcol {
-        padding: 0 15px;
-        margin-bottom: 15px;
-        border-right: none;
-    }
-
-    .events .rightcol {
-        padding: 0 20px;
-    }
-    
-    #eng-pics .img-wrap {
-        border-radius: 0;
-    }
 
     #map-content-wrapper {
         margin-bottom: 40px;
@@ -256,20 +197,17 @@
 }
 
 @media screen and (max-width: 640px) {
-    .hero .hero-content {
-        padding-top: 100%;
+    .member-actions {
+        float: none;
     }
-    .hero .hero-content img {
-	width: 75%;
- }
 
-    #eng-pics .img-wrap i {
-        font-size: 25px;
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        top: 10px;
-        right: 10px; }
+    .hero .hero-content {
+        padding-top: 10%;
+    }
+
+    #top {
+        overflow:hidden;
+    }
 
     #map-content-wrapper {
         margin-bottom: 0;
@@ -299,8 +237,12 @@
 
 @media screen and (max-width: 480px) {
     .hero .hero-content {
-        padding-top: 110%;
+        padding-top: 20%;
     }
+
+  .member-actions {
+    float: none;
+  }
     
     .hero .hero-content img {
         width: 65%;
@@ -363,7 +305,7 @@
 
 @media screen and (max-width: 320px) {
     .hero .hero-content {
-        padding-top: 130%;
+        padding-top: 20%;
     }
 
     .rsvp {

@@ -15,11 +15,11 @@
     "template",
     "website template"
   ],
-  "author": "Ram Patra",
+  "author": "Ryan Hedglen",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/rampatra/wedding-website",
+  "homepage": "https://github.com/hedglenrm/wedding-website",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.0"
